@@ -210,14 +210,14 @@ function fastpostvalidate(theform, noajaxpost) {
 		}
 	}
 	if(theform.message.value == '' || theform.subject.value == '') {
-		s = '抱歉，您尚未输入标题或内容';
+		s = 'Sorry, you have not entered the title or content yet';
 		theform.message.focus();
 	} else if(mb_strlen(theform.subject.value) > 80) {
-		s = '您的标题超过 80 个字符的限制';
+		s = 'The title is limits to 80 characters';
 		theform.subject.focus();
 	}
 	if(!disablepostctrl && ((postminchars != 0 && mb_strlen(theform.message.value) < postminchars) || (postmaxchars != 0 && mb_strlen(theform.message.value) > postmaxchars))) {
-		s = '您的帖子长度不符合要求。\n\n当前长度: ' + mb_strlen(theform.message.value) + ' ' + '字节\n系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节';
+		s = 'Your post does not meet the length requirements.\n\nCurrent length: ' + mb_strlen(theform.message.value) + ' ' + 'Bytes\nLImitation: ' + postminchars + ' to ' + postmaxchars + ' Bytes';
 	}
 	if(s) {
 		showError(s);
