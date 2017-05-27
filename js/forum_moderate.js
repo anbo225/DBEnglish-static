@@ -77,9 +77,9 @@ function modclick(obj, pid) {
 	}
 	$('mdct').innerHTML = modclickcount;
 	if(modclickcount > 0) {
-		var offset = fetchOffset(obj);
-		$('mdly').style.top = offset['top'] - 65 + 'px';
-		$('mdly').style.left = offset['left'] - 215 + 'px';
+		 var offset = fetchOffset(obj);
+		 $('mdly').style.top = offset['top'] - 65 + 'px';
+		 $('mdly').style.left = offset['left'] - 215 + 'px';
 		$('mdly').style.display = '';
 	} else {
 		$('mdly').style.display = 'none';
@@ -98,12 +98,17 @@ function tmodclick(obj) {
 		modclickcount--;
 	}
 	$('mdct').innerHTML = modclickcount;
+	if (modclickcount > 1)
+		$("s").innerHTML = "s";
+	else
+		$("s").innerHTML = '';
 	if(modclickcount > 0) {
-		var top_offset = obj.offsetTop;
-		while((obj = obj.offsetParent).id != 'threadlist') {
-			top_offset += obj.offsetTop;
-		}
-		$('mdly').style.top = top_offset - 7 + 'px';
+		// var top_offset = obj.offsetTop;
+		// while((obj = obj.offsetParent).id != 'threadlist') {
+		// 	top_offset += obj.offsetTop;
+		// }
+		$('mdly').style.top = '100px';
+		$('mdly').style.left = '200px';
 		$('mdly').style.display = '';
 	} else {
 		$('mdly').style.display = 'none';
