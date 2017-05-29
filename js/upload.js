@@ -1116,7 +1116,7 @@ function fileQueueError(file, errorCode, message) {
 			message = parseInt(message);
 			showDialog("The number of files you selected exceeds the limit\n"+(message === 0 ? "You have reached the maximum number of uploaded files." : "You can still upload " + message + " files"), 'notice', null, null, 0, null, null, null, null, sdCloseTime);
 			return;
-		}
+		} 
 
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
 		progress.setError();

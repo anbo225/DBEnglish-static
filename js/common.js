@@ -1601,20 +1601,20 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 	var tclass = searchtxt.className;
 	searchtxt.className = tclass + ' xg1';
 	if (!!("placeholder" in document.createElement("input"))) {
-		if(searchtxt.value == '请输入搜索内容') {
+		if(searchtxt.value == 'Search') {
 			searchtxt.value = '';
 		}
-		searchtxt.placeholder = '请输入搜索内容';
+		searchtxt.placeholder = 'Search';
 	} else {
 		searchtxt.onfocus = function () {
-			if(searchtxt.value == '请输入搜索内容') {
+			if(searchtxt.value == 'Search') {
 				searchtxt.value = '';
 				searchtxt.className = tclass;
 			}
 		};
 		searchtxt.onblur = function () {
 			if(searchtxt.value == '' ) {
-				searchtxt.value = '请输入搜索内容';
+				searchtxt.value = 'Search';
 				searchtxt.className = tclass + ' xg1';
 			}
 		};
@@ -1656,7 +1656,7 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 }
 
 function searchFocus(obj) {
-	if(obj.value == '请输入搜索内容') {
+	if(obj.value == 'Search') {
 		obj.value = '';
 	}
 	if($('cloudsearchquery') != null) {
